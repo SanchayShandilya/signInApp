@@ -7,6 +7,7 @@ const SignIn = () => {
   const [emailInput, setEmailInput] = useState(null);
   const [signInButton, setSignInButton] = useState(null);
 
+  // code to add focus on email
   useEffect(() => {
     if (emailInput) {
       emailInput.focus();
