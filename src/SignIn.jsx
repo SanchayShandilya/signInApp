@@ -6,41 +6,12 @@ const SignIn = () => {
   const [passwordInput, setPasswordInput] = useState(null);
   const [emailInput, setEmailInput] = useState(null);
   const [signInButton, setSignInButton] = useState(null);
-  // useEffect(() => {
-  //   if (passwordInput) {
-  //     passwordInput.focus(); 
-  //   }
-  // }, [passwordInput]);
 
   useEffect(() => {
     if (emailInput) {
       emailInput.focus();
     }
   }, [emailInput]);
-
-  // useEffect(() => {
-  //   const handleTab = (e) => {
-  //     if (document.activeElement === signInButton && e.key === 'Tab' && !e.shiftKey) {
-  //       e.preventDefault();
-  //       emailInput?.focus();
-  //     }
-  //   };
-
-  //   window.addEventListener('keydown', handleTab);
-  //   return () => window.removeEventListener('keydown', handleTab);
-  // }, [signInButton, emailInput]);
-
-  // useEffect(() => {
-  //   const handleShiftTabFromEmail = (e) => {
-  //     if (document.activeElement === emailInput && e.key === 'Tab' && e.shiftKey) {
-  //       e.preventDefault();
-  //       signInButton?.focus();
-  //     }
-  //   };
-
-  //   window.addEventListener('keydown', handleShiftTabFromEmail);
-  //   return () => window.removeEventListener('keydown', handleShiftTabFromEmail);
-  // }, [emailInput, signInButton]);
 
   useEffect(() => {
     const handleF11 = (e) => {
@@ -84,37 +55,6 @@ const SignIn = () => {
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
   }, []);
-  
-
-
-  // useEffect(() => {
-  //   const skipToButton = (e) => {
-  //     if (document.activeElement === emailInput && e.key === 'Tab' && !e.shiftKey) {
-  //       e.preventDefault();
-  //       signInButton?.focus();
-  //     }
-  //   };
-  
-  //   window.addEventListener('keydown', skipToButton);
-  //   return () => window.removeEventListener('keydown', skipToButton);
-  // }, [emailInput, signInButton]);
-
-  // useEffect(() => {
-  //   const handleTabLoop = (e) => {
-  //     if (e.key === 'Tab' && !e.shiftKey) {
-  //       if (document.activeElement === emailInput) {
-  //         e.preventDefault();
-  //         signInButton?.focus();
-  //       } else if (document.activeElement === signInButton) {
-  //         e.preventDefault();
-  //         emailInput?.focus();
-  //       }
-  //     }
-  //   };
-  
-  //   window.addEventListener('keydown', handleTabLoop);
-  //   return () => window.removeEventListener('keydown', handleTabLoop);
-  // }, [emailInput, signInButton]);
 
   useEffect(() => {
     const handleTabLoop = (e) => {
