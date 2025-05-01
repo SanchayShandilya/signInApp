@@ -47,3 +47,10 @@ body {
     background-color: #0056b3;
   }
   
+  .signin-form input,
+  .signin-form button {
+    font-family: Arial, sans-serif; /* or any preferred font */
+    font-size: 16px;
+  }
+
+  
