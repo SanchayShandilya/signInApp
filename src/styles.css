@@ -46,10 +46,10 @@ body {
   .signin-form button:hover {
     background-color: #0056b3;
   }
-  
+
   .signin-form input,
   .signin-form button {
-    font-family: Arial, sans-serif; /* or any preferred font */
+    font-family: Arial, sans-serif;
     font-size: 16px;
   }
 
