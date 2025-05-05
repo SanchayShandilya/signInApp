@@ -60,11 +60,16 @@ const SignIn = () => {
   useEffect(() => {
     const handleTabLoop = (e) => {
       if (e.key === 'Tab') {
-        if (e.shiftKey) {
+        if (!e.shiftKey) {
           if (document.activeElement === emailInput) {
             e.preventDefault();
             signInButton?.focus();
-          } else if (document.activeElement === signInButton) {
+          } 
+          // else if (document.activeElement === passwordInput) {
+          //   e.preventDefault();
+          //   signInButton?.focus();
+          // }
+          else if (document.activeElement === signInButton) {
             e.preventDefault();
             emailInput?.focus();
           }
@@ -86,8 +91,15 @@ const SignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (password.length < 8) {
+      alert('Password must be at least 8 characters long');
+      return;  
+    }
     alert(`Email: ${email}\nPassword: ${password}`);
   };
+
+  const isFormValid = email && password.length >= 8;
 
   return (
     <div className="signin-container">
@@ -110,8 +122,10 @@ const SignIn = () => {
           required
           tabIndex={-1}
         />
-        <button type="submit"
-         ref={(btn) => setSignInButton(btn)}
+        <button 
+          disabled={!isFormValid} 
+          type="submit"
+          ref={(btn) => setSignInButton(btn)}
          >Sign In</button>
       </form>
     </div>
